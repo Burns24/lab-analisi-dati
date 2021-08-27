@@ -12,8 +12,7 @@ LIST of available functions:
 
 double std_dev(double average, double sqrd_average, int sample_number){
 	/*
-	Returns the standard deviation normalized
-	over the square root of the number of samples.
+	Restituisce la deviazione standard normalizzata sulla radice della grandezza del campione
 	*/
         if (sample_number == 0){
                 return 0;
@@ -23,16 +22,16 @@ double std_dev(double average, double sqrd_average, int sample_number){
 
 void prog_average_std_dev_block_method(const string& output_file, double* average_array, double* sqrd_average_array, int number_blocks){
 	/*
-	Prints a file in data/ containing the progressive
-	average and std-dev of the measures over the
-	Monte Carlo blocks.
+  Stampa un file nella cartella data/
+  contenente la media progressiva e la std-dev delle misure
+  sui blocchi
 	*/
 
         ofstream out_file;
         out_file.open(output_file);
-        double *prog_average = new double[number_blocks]();         // Define progressive average vector
-        double *prog_average_sqr = new double[number_blocks]();     // Define progressive average squared vector
-        double *prog_error = new double[number_blocks]();           // Define progressive error vector
+        double *prog_average = new double[number_blocks]();         // Definisco il vettore medie progressive
+        double *prog_average_sqr = new double[number_blocks]();     // Vettore medie quadre
+        double *prog_error = new double[number_blocks]();           // Definisco il vettore con gli errori
 
 	for(int i=0; i < number_blocks; i++){
 
@@ -53,7 +52,7 @@ void prog_average_std_dev_block_method(const string& output_file, double* averag
 
 double chi_sqrd(double* observation_vec, double* expected_value_vec, double* variance_vec, int observation_number){
 	/*
-	Return the chi^2 value of the given data.
+	Restituisce il chi^2 dei dati
 	*/
 
 	double chi_sqrd = 0;

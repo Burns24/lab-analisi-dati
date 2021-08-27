@@ -32,8 +32,8 @@ int main(int argc, char *argv[]){
 		input.close();
 	} else cerr << "PROBLEM: Unable to open seed.in" << endl;
 
-	// Create and load a vector with M uniformly distr random number
-        int M = 1E4;			// Total number of throws
+	// Creo e carico un vettore con M numeri con distrubuzione uniforme
+        int M = 1E4;			// Numero totale generazioni
 	int N[4] = {1, 2, 10, 100};
 
 	double exponential_decay_rate = 1;
