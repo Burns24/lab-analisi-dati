@@ -33,19 +33,18 @@ int main(int argc, char *argv[]){
 	} else cerr << "PROBLEM: Unable to open seed.in" << endl;
 
 
-	int M = 1E8;			// Total number of throws
-	int N = 1E2;                 	// Number of blocks
-	int L = static_cast<int>(M/N);  // Number of throws in each block, please use for M a multiple of N
-	double *random_vec = new double[M]();		// Define random vector
-
-	for(int i=0; i < M; i++){	// Load the vector with random number distributed uniformly
+	int M = 1E8;			// Numero totale di generazioni
+	int N = 1E2;                 	// Numero di blocchi
+	int L = static_cast<int>(M/N);  // Numero di generazioni per ogni blocco, usare M multiplo di N
+	double *random_vec = new double[M]();		// Definisco vettore di numeri casuali
+	for(int i=0; i < M; i++){	// Carico il vettore con numeri casuali generati uniformemente
 		random_vec[i] = rnd.Rannyu();
 	}
 
 	// Estimate of <r>
-	double *average1 = new double[N]();		// Define average vector
-	double *average_sqr1 = new double[N]();		// Define average squared vector
-	for(int i=0; i < N; i++){       // Compute the average of my observable and the aveˆ2 to calculate the variance
+	double *average1 = new double[N]();		// Vettore medie
+	double *average_sqr1 = new double[N]();		// Vettore medie quadrate
+	for(int i=0; i < N; i++){       // calcola media e media quadrata delle osservabili per poter calcolare la varianza
 		double sum = 0;
 		for(int j=0; j < L; j++){
 			int k = j + i*L;
@@ -56,9 +55,9 @@ int main(int argc, char *argv[]){
 	}
 	prog_average_std_dev_block_method("results/EX011(1).dat", average1, average_sqr1, N);
 	// Estimate of <(sigma_r)^2>
-        double *average2 = new double[N]();             // Define average vector
-        double *average_sqr2 = new double[N]();         // Define average squared vector
-	for(int i=0; i < N; i++){       // Compute the average of my observable and the aveˆ2 to calculate the variance
+        double *average2 = new double[N]();
+        double *average_sqr2 = new double[N]();
+	for(int i=0; i < N; i++){
                  double sum = 0;
                  for(int j=0; j < L; j++){
                          int k = j + i*L;
@@ -69,12 +68,12 @@ int main(int argc, char *argv[]){
          }
          prog_average_std_dev_block_method("results/EX011(2).dat", average2, average_sqr2, N);
 
-	// Estimate chi^2 dividing [0,1] in sub-intervals intervals=10^2 part
+	// Stimo il chi^2 dividendo [0,1] in sotto intervalli
 	int intervals = 100;
-	double interval_prob = 1./intervals;		// Probability to sit in a specific sub-interval due to uniform distr
-	int throws = static_cast<int>(L/intervals); 	// Throws in each sub-interval
+	double interval_prob = 1./intervals;		// Probabilità di trovarsi in un specifico sottointervallo data una distribuzione uniforme
+	int throws = static_cast<int>(L/intervals); 	// Generazioni in ogni sotto-intervallo
 
-	double expected_value = throws/intervals;	// Expected value due to uniform distribution
+	double expected_value = throws/intervals;	// Valore atteso della distribuzione uniforme
 	double *expected_value_vec = new double[intervals]();
 	for(int i=0; i< intervals; i++) expected_value_vec[i] = expected_value;
 
