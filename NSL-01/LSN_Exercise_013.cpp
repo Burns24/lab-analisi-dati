@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
-// Functions definitions
+// Definisco delle funzioni
 
 void set_seed_with_primes(Random *p_rnd){
         int seed[4];

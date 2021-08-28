@@ -1,4 +1,3 @@
-
 /*###################################
 File contenente l'implementazione di
 alcune funzioni statistiche.
@@ -7,7 +6,6 @@ alcune funzioni statistiche.
 - metodo incertezza a blocchi: prog_average_std_dev_block_method();
 - chi^2: chi_sqrd();
 ###################################*/
-
 
 #include "statistical_functions.h"
 
