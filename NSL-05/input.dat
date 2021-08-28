@@ -1,0 +1,13 @@
+1
+100
+1000
+100
+0
+1
+
+    ReadInput >> delta;
+    ReadInput >> blocks_number;
+    ReadInput >> steps_per_block;
+    ReadInput >> equilibration_steps;
+    ReadInput >> uniform;
+    ReadInput >> gauss;
