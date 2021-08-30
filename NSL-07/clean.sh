@@ -1,0 +1,9 @@
+rm -rf *gofr*
+rm -rf *gave*
+rm -rf *epot*
+rm -rf *pres*
+rm -rf frames/*.xyz
+rm -rf *output*
+rm -rf seed.out
+rm -rf config.final
+rm -rf results/*epot*

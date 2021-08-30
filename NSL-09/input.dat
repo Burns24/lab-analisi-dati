@@ -1,0 +1,19 @@
+2000
+100
+2.0
+0.1
+0.1
+0.1
+0.1
+0.1
+0.8
+
+        ReadInput >> number_of_generations;
+        ReadInput >> population_size;
+        ReadInput >> r;
+        ReadInput >> permutation_probability;
+        ReadInput >> block_permutation_probability;
+        ReadInput >> shift_probability;
+        ReadInput >> partial_shift_probability;
+        ReadInput >> inversion_probability;
+        ReadInput >> crossover_probability;
