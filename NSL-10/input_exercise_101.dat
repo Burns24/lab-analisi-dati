@@ -1,0 +1,7 @@
+1.5
+0.001
+100
+
+      ReadInput >> initial_temperature;
+      ReadInput >> delta_temperature;
+      ReadInput >> mc_steps;
